@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.88.1" />
+	
+	<link rel="icon" href="/images/icon_cmd.png">
+	
+	<title>How setup Haproxy with zero downtime reload from code source | Tech-Blog</title>
+	
+	
+
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jenciso.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/HAProxy_Logo-2-1-cover.png"/>
+<meta name="twitter:title" content="How setup Haproxy with zero downtime reload from code source"/>
+<meta name="twitter:description" content="if you are looking for a modern load balancer with zero downtime when you need to reload its configuration, HAProxy 1.8 and Linux kernel &gt;=3.9 could take advantage of a new reload mechanism which can transfer sockets from the old process to the new process without dropping any connections."/>
+
+	<meta property="og:title" content="How setup Haproxy with zero downtime reload from code source" />
+<meta property="og:description" content="if you are looking for a modern load balancer with zero downtime when you need to reload its configuration, HAProxy 1.8 and Linux kernel &gt;=3.9 could take advantage of a new reload mechanism which can transfer sockets from the old process to the new process without dropping any connections." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenciso.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/" /><meta property="og:image" content="https://jenciso.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/HAProxy_Logo-2-1-cover.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-10-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-10-01T00:00:00+00:00" />
+
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+	<link href="/css/syntax.css" rel="stylesheet">
+
+        
+
+	<link href="/css/prism.css" rel="stylesheet" />
+  <script src="/js/prism.js"></script>
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://jenciso.github.io/">
+
+            
+            <img src="/images/icon_cmd.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">About Me</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/cv">CV</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle"><a href="/blog">Tech-Blog</a></h1>
+    <p class="lead">
+         Sharing my tech stories
+    </p>
+</div>
+<div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    <p>Share</p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=How%20setup%20Haproxy%20with%20zero%20downtime%20reload%20from%20code%20source&url=https%3a%2f%2fjenciso.github.io%2fblog%2fhow-setup-haproxy-with-zero-downtime-reload-from-code-source%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fjenciso.github.io%2fblog%2fhow-setup-haproxy-with-zero-downtime-reload-from-code-source%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjenciso.github.io%2fblog%2fhow-setup-haproxy-with-zero-downtime-reload-from-code-source%2f&amp;title=How%20setup%20Haproxy%20with%20zero%20downtime%20reload%20from%20code%20source" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=435');return false;">
+        <i class="fab fa-linkedin"></i>
+        </a>
+        </li>        
+    </ul>
+
+    
+        <div class="sep">
+        </div>				
+        <ul>
+            <li> 
+            <a  class="small smoothscroll" href="#disqus_thread"></a>
+            </li>
+        </ul>
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        
+                        <h1 class="posttitle">How setup Haproxy with zero downtime reload from code source</h1>
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="Juan Enciso">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">Juan Enciso</a><br>
+                                <span class="author-description">
+                                    IT Architect, SRE Engineer, DevOps Tools Trainer<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 1, 2018
+                                    <i class="far fa-clock clock"></i>
+                                    3 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                    </div>
+
+                    
+                    
+                    
+                        <img class="featured-image img-fluid" src="https://jenciso.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/HAProxy_Logo-2-1-cover.png" alt="thumbnail for this post">
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>if you are looking for a modern load balancer with zero downtime when you need to reload its configuration, HAProxy 1.8 and Linux kernel &gt;=3.9 could take advantage of a new reload mechanism which can transfer sockets from the old process to the new process without dropping any connections.</p>
+<p>On on-premise scenario, this enable the dynamic scalability and continuous integration into your production datacenter.</p>
+<p>Follow the next steps to install a new version of haproxy, in this case the release 1.8.14, it include the reload daemon when the config file (haproxy.cfg) need to be changed.</p>
+<h3 id="steps">Steps</h3>
+<p>Download the compatible haproxy version</p>
+<pre><code>export HAPROXY_MAJOR=1.8
+export HAPROXY_VERSION=1.8.14
+export HAPROXY_URL=https://www.haproxy.org
+</code></pre>
+<pre><code>wget -O haproxy.tar.gz \
+ &quot;$HAPROXY_URL=/download/${HAPROXY_MAJOR}/src/haproxy-${HAPROXY_VERSION}.tar.gz&quot;
+</code></pre>
+<p>Installing the prerequisites packages to compile</p>
+<p>For ubuntu 16.04:</p>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get install -y ca-certificates gcc \
+  libc6-dev liblua5.3-dev libpcre3-dev libssl-dev make wget \
+  zlib1g-dev libsystemd-dev
+</code></pre>
+<p>For Centos 7.5:</p>
+<pre><code>yum install -y inotify-tools wget tar gzip make gcc perl pcre-devel zlib-devel iptables \
+  openssl openssl-devel openssl-libs systemd-devel
+</code></pre>
+<p>Compiling</p>
+<pre><code>tar xvfz haproxy.tar.gz
+cd haproxy-1.8.14/
+</code></pre>
+<p>For ubuntu:</p>
+<pre><code>make TARGET=linux2628 USE_GETADDRINFO=1 USE_ZLIB=1 USE_REGPARM=1 USE_OPENSSL=1 \
+  USE_LUA=1 USE_SYSTEMD=1 USE_PCRE=1 USE_PCRE_JIT=1 USE_NS=1
+make install
+</code></pre>
+<p>For Centos 7.5:</p>
+<pre><code>make TARGET=linux2628 USE_GETADDRINFO=1 USE_ZLIB=1 USE_REGPARM=1 USE_OPENSSL=1 \
+  USE_SYSTEMD=1 USE_PCRE=1 USE_PCRE_JIT=1 USE_NS=1
+make install
+</code></pre>
+<p>During the compilation process, you could verify the compile options passed via <code>make</code>, so you have to get the <code>USE_SYSTEMD=1</code> via the stdout log, like this:</p>
+<pre><code>HA-Proxy version 1.8.14-52e4d43 2018/09/20
+Copyright 2000-2018 Willy Tarreau &lt;willy@haproxy.org&gt;
+
+Build options :
+  TARGET  = linux2628
+  CPU     = generic
+  CC      = gcc
+  CFLAGS  = -O2 -g -fno-strict-aliasing -Wdeclaration-after-statement -fwrapv -fno-strict-overflow -Wno-unused-label
+  OPTIONS = USE_GETADDRINFO=1 USE_ZLIB=1 USE_REGPARM=1 USE_OPENSSL=1 USE_LUA=1 USE_SYSTEMD=1 USE_PCRE=1 USE_PCRE_JIT=1 USE_NS=1
+
+Default settings :
+  maxconn = 2000, bufsize = 16384, maxrewrite = 1024, maxpollevents = 200
+
+Built with OpenSSL version : OpenSSL 1.0.2g  1 Mar 2016
+Running on OpenSSL version : OpenSSL 1.0.2g  1 Mar 2016
+OpenSSL library supports TLS extensions : yes
+OpenSSL library supports SNI : yes
+OpenSSL library supports : TLSv1.0 TLSv1.1 TLSv1.2
+Built with Lua version : Lua 5.3.1
+Built with transparent proxy support using: IP_TRANSPARENT IPV6_TRANSPARENT IP_FREEBIND
+Encrypted password support via crypt(3): yes
+Built with multi-threading support.
+Built with PCRE version : 8.38 2015-11-23
+Running on PCRE version : 8.38 2015-11-23
+PCRE library supports JIT : yes
+Built with zlib version : 1.2.8
+Running on zlib version : 1.2.8
+Compression algorithms supported : identity(&quot;identity&quot;), deflate(&quot;deflate&quot;), raw-deflate(&quot;deflate&quot;), gzip(&quot;gzip&quot;)
+Built with network namespace support.
+
+Available polling systems :
+      epoll : pref=300,  test result OK
+       poll : pref=200,  test result OK
+     select : pref=150,  test result OK
+Total: 3 (3 usable), will use epoll.
+
+Available filters :
+	[SPOE] spoe
+	[COMP] compression
+	[TRACE] trace
+</code></pre>
+<hr>
+<h2 id="references">References:</h2>
+<p><a href="https://fabianlee.org/2017/10/16/haproxy-zero-downtime-reloads-with-haproxy-1-8-on-ubuntu-16-04-with-systemd/">https://fabianlee.org/2017/10/16/haproxy-zero-downtime-reloads-with-haproxy-1-8-on-ubuntu-16-04-with-systemd/</a></p>
+<p><a href="https://midiroot.com/post/haproxy-getting-started/">https://midiroot.com/post/haproxy-getting-started/</a></p>
+<p><a href="https://www.haproxy.com/blog/truly-seamless-reloads-with-haproxy-no-more-hacks/">https://www.haproxy.com/blog/truly-seamless-reloads-with-haproxy-no-more-hacks/</a></p>
+<p><a href="https://engineeringblog.yelp.com/2015/04/true-zero-downtime-haproxy-reloads.html">https://engineeringblog.yelp.com/2015/04/true-zero-downtime-haproxy-reloads.html</a></p>
+<p><a href="https://thegeeksalive.com/how-to-setup-haproxy-http-load-balancer-on-centos/">https://thegeeksalive.com/how-to-setup-haproxy-http-load-balancer-on-centos/</a></p>
+
+                    </div>
+                    <br/>
+                    <br/> 
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/haproxy">haproxy</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/loadbalancer">loadbalancer</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://jenciso.github.io/blog/embedding-asciinema-cast-in-your-hugo-site/"> &laquo; Embedding asciinema cast in your Hugo site</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://jenciso.github.io/blog/how-to-recovery-the-admin-password-in-grafana/">Recover your grafana admin password using sqlite shell &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">              
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jenciso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/active-directory">active-directory</a>
+			
+			<a class="mt-1 mb-1" href="/tags/asciinema">asciinema</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bash">bash</a>
+			
+			<a class="mt-1 mb-1" href="/tags/centos">centos</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cloud-native">cloud-native</a>
+			
+			<a class="mt-1 mb-1" href="/tags/dnsmasq">dnsmasq</a>
+			
+			<a class="mt-1 mb-1" href="/tags/emoji">emoji</a>
+			
+			<a class="mt-1 mb-1" href="/tags/gluster">gluster</a>
+			
+			<a class="mt-1 mb-1" href="/tags/gradle">gradle</a>
+			
+			<a class="mt-1 mb-1" href="/tags/grafana">grafana</a>
+			
+			<a class="mt-1 mb-1" href="/tags/haproxy">haproxy</a>
+			
+			<a class="mt-1 mb-1" href="/tags/heketi">heketi</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hugo">hugo</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jdk">jdk</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jenkins">jenkins</a>
+			
+			<a class="mt-1 mb-1" href="/tags/kubernetes">kubernetes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/lab">lab</a>
+			
+			<a class="mt-1 mb-1" href="/tags/loadbalancer">loadbalancer</a>
+			
+			<a class="mt-1 mb-1" href="/tags/monitoring">monitoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/networkmanager">networkmanager</a>
+			
+			<a class="mt-1 mb-1" href="/tags/openconnect">openconnect</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ruby">ruby</a>
+			
+			<a class="mt-1 mb-1" href="/tags/spring-boot">spring-boot</a>
+			
+			<a class="mt-1 mb-1" href="/tags/storage">storage</a>
+			
+			<a class="mt-1 mb-1" href="/tags/terraform">terraform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ubuntu">ubuntu</a>
+			
+			<a class="mt-1 mb-1" href="/tags/virtualbox">virtualbox</a>
+			
+			<a class="mt-1 mb-1" href="/tags/vpn">vpn</a>
+			
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                &copy; Copyright Juan Enciso - All rights reserved
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-106539950-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

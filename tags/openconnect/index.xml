@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openconnect on Tech-Blog</title>
+    <link>https://jenciso.github.io/tags/openconnect/</link>
+    <description>Recent content in openconnect on Tech-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Juan Enciso - All rights reserved</copyright>
+    <lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jenciso.github.io/tags/openconnect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Custom openconnect vpn setup for use in Palo Alto appliances</title>
+      <link>https://jenciso.github.io/blog/how-to-compile-a-global-protect-openconnect-version/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenciso.github.io/blog/how-to-compile-a-global-protect-openconnect-version/</guid>
+      <description>Intro My company use the Palo Alto Networks appliance in order to offer a VPN service for us. Normally, I use openconnect or openvpn client when I needed to setup some VPN connection, but these clients don&amp;rsquo;t work with Palo Alto devices.</description>
+    </item>
+    
+  </channel>
+</rss>

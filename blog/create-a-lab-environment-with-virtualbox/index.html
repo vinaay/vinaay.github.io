@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.88.1" />
+	
+	<link rel="icon" href="/images/icon_cmd.png">
+	
+	<title>Create a lab environment with VirtualBox | Tech-Blog</title>
+	
+	
+
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jenciso.github.io/blog/create-a-lab-environment-with-virtualbox/vbox_logo_cover.png"/>
+<meta name="twitter:title" content="Create a lab environment with VirtualBox"/>
+<meta name="twitter:description" content="Using VirtualBox to create a lab environment"/>
+
+	<meta property="og:title" content="Create a lab environment with VirtualBox" />
+<meta property="og:description" content="Using VirtualBox to create a lab environment" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenciso.github.io/blog/create-a-lab-environment-with-virtualbox/" /><meta property="og:image" content="https://jenciso.github.io/blog/create-a-lab-environment-with-virtualbox/vbox_logo_cover.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-10-14T23:45:00+00:00" />
+<meta property="article:modified_time" content="2019-10-14T23:45:00+00:00" />
+
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+	<link href="/css/syntax.css" rel="stylesheet">
+
+        
+
+	<link href="/css/prism.css" rel="stylesheet" />
+  <script src="/js/prism.js"></script>
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://jenciso.github.io/">
+
+            
+            <img src="/images/icon_cmd.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">About Me</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/cv">CV</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle"><a href="/blog">Tech-Blog</a></h1>
+    <p class="lead">
+         Sharing my tech stories
+    </p>
+</div>
+<div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    <p>Share</p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Create%20a%20lab%20environment%20with%20VirtualBox&url=https%3a%2f%2fjenciso.github.io%2fblog%2fcreate-a-lab-environment-with-virtualbox%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fjenciso.github.io%2fblog%2fcreate-a-lab-environment-with-virtualbox%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjenciso.github.io%2fblog%2fcreate-a-lab-environment-with-virtualbox%2f&amp;title=Create%20a%20lab%20environment%20with%20VirtualBox" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=435');return false;">
+        <i class="fab fa-linkedin"></i>
+        </a>
+        </li>        
+    </ul>
+
+    
+        <div class="sep">
+        </div>				
+        <ul>
+            <li> 
+            <a  class="small smoothscroll" href="#disqus_thread"></a>
+            </li>
+        </ul>
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        
+                        <h1 class="posttitle">Create a lab environment with VirtualBox</h1>
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="Juan Enciso">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">Juan Enciso</a><br>
+                                <span class="author-description">
+                                    IT Architect, SRE Engineer, DevOps Tools Trainer<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 14, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    4 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                    </div>
+
+                    
+                    
+                    
+                        <img class="featured-image img-fluid" src="https://jenciso.github.io/blog/create-a-lab-environment-with-virtualbox/vbox_logo_cover.png" alt="thumbnail for this post">
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p><a href="https://www.virtualbox.org/">VirtualBox</a> is a great tool often used to simulate an entire lab. It could create all need to accomplish this goal for you.</p>
+<p>VirtualBox can create multiples Networks and different virtual machines (VMs). On this post, I will show you how to create a simple lab environment step by step.</p>
+<p>On this scenario, I&rsquo;ll use Virtualbox 6 and two type of networks:</p>
+<ul>
+<li><code>Nat Network</code>, it is the main network which will be use to communicate with the ouside world and other VMs.</li>
+<li><code>Host-Only Adapter</code>, this network is only used to get access on the VM from your desktop.</li>
+</ul>
+<hr>
+<h2 id="steps">Steps</h2>
+<h3 id="installation">Installation</h3>
+<p>You need choose your appropiate package from this <a href="https://www.virtualbox.org/wiki/Linux_Downloads">URL</a></p>
+<p>For ubuntu users:</p>
+<pre><code class="language-shell">sudo apt-get update
+sudo apt-get install virtualbox
+</code></pre>
+<p>or</p>
+<pre><code class="language-shell">wget https://download.virtualbox.org/virtualbox/6.0.14/virtualbox-6.0_6.0.14-133895~Ubuntu~xenial_amd64.deb
+sudo dpgk -i virtualbox-6.0_6.0.14-133895~Ubuntu~xenial_amd64.deb
+</code></pre>
+<blockquote>
+<p>Consider install the VirtualBox Extension Pack from <a href="https://download.virtualbox.org/virtualbox/6.0.14/Oracle_VM_VirtualBox_Extension_Pack-6.0.14.vbox-extpack">here</a></p>
+</blockquote>
+<hr>
+<h3 id="network-configuration">Network Configuration</h3>
+<h4 id="host-network">Host Network</h4>
+<p><img src="host-only-network.png" alt=""></p>
+<p>By default, VirtualBox already creates a <code>Host-Only Adapter</code> network, which use this CIDR: <code>192.168.56.0/24</code>.</p>
+<p>This network will be use only to communicate with your Host (a.k.a your desktop machine). Also, on this lab environment we need a Nat Network, whch is another kind of network</p>
+<p>If you don&rsquo;t have this adapter, you need to create it with this simple command</p>
+<pre><code class="language-shell">VBoxManage hostonlyif create
+</code></pre>
+<hr>
+<h4 id="nat-network">Nat Network</h4>
+<p><img src="NAT-mode-works.png" alt=""></p>
+<p>A Nat network is the main network which will be use to communicate your VM with with the outside world. Virtualbox creates this network using these steps.</p>
+<p>E.g. Create the network <code>10.0.2.0/24</code> with name <code>natnet</code></p>
+<pre><code class="language-shell">VBoxManage natnetwork add --netname natnet --network &quot;10.0.2.0/24&quot; --enable --dhcp on
+VBoxManage natnetwork start --netname natnet
+</code></pre>
+<hr>
+<h3 id="virtual-machine-setup">Virtual Machine Setup</h3>
+<h4 id="create-a-vm-base">Create a VM base</h4>
+<p>I need to create a VM to use it as base to create other VM&rsquo;s. In this example, I will use Centos 7 image, and the VM will named <code>centos7</code></p>
+<pre><code class="language-shell">export VM=centos7
+</code></pre>
+<pre><code class="language-shell">VBoxManage createvm --name $VM --ostype RedHat_64 --register
+</code></pre>
+<p>Now, we need to associate the <code>natnetwork</code> created previously with the <code>nic1</code> interface</p>
+<pre><code class="language-shell">VBoxManage modifyvm $VM --nic1 natnetwork --nat-network1 natnet
+</code></pre>
+<p>Create another nic2 type <code>Host-Only Adapter</code></p>
+<pre><code class="language-shell">VBoxManage modifyvm $VM --nic2 hostonly --hostonlyadapter2 vboxnet0
+</code></pre>
+<p>If you want to increase the CPU and Memory, this moment is good to do that</p>
+<pre><code class="language-shell">VBoxManage modifyvm $VM --cpus 2 --memory 512
+</code></pre>
+<p>The VM will need a storage, then create a dynamic disk with 10GB and a SATA Controller to attach it</p>
+<pre><code class="language-shell">VBoxManage createhd --filename ~/VirtualBox\ VMs/$VM/$VM.vdi --size 10240
+VBoxManage storagectl $VM --name &quot;SATA Controller&quot; --add sata --controller IntelAHCI
+VBoxManage storageattach $VM --storagectl &quot;SATA Controller&quot; --port 0 --device 0 \
+  --type hdd --medium ~/VirtualBox\ VMs/$VM/$VM.vdi
+</code></pre>
+<p>Create a IDE controller to mount the iso installer image in order to begin the installation process. E.g. I will use the CentOS 7 minimal image iso.</p>
+<blockquote>
+<p>Previously you need to download the iso image</p>
+</blockquote>
+<pre><code class="language-shell">mkdir ~/isos/
+wget \
+  http://centos.usetelecom.com.br/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso 
+  -O ~/isos/
+</code></pre>
+<pre><code class="language-shell">VBoxManage storagectl $VM --name &quot;IDE Controller&quot; --add ide
+VBoxManage storageattach $VM --storagectl &quot;IDE Controller&quot; --port 0 \
+  --device 0 --type dvddrive --medium ~/isos/CentOS-7-x86_64-Minimal-1908.iso
+</code></pre>
+<p>You could setup others miscellaneous system options</p>
+<pre><code class="language-shell">VBoxManage modifyvm $VM --ioapic on
+VBoxManage modifyvm $VM --boot1 dvd --boot2 disk --boot3 none --boot4 none
+</code></pre>
+<p>And finally, you have a VM created like this:</p>
+<p><img src="/images/virtualbox_centos7.png" alt=""></p>
+<p>To start the VM and begin the installation process, use the follow command:</p>
+<pre><code class="language-shell">VBoxManage startvm $VM
+</code></pre>
+<hr>
+<h4 id="install-centos-os">Install Centos OS</h4>
+<p>Start the installation process</p>
+<p><img src="vb-centos7-01.png" alt=""></p>
+<p>Setup your localtime. In my case, as I live in Brazil, it is <code>America/Sao_Paulo</code></p>
+<p><img src="vb-centos7-02.png" alt=""></p>
+<p>Create a <code>ansible</code> user, and make it Administrator</p>
+<p><img src="vb-centos7-03.png" alt=""></p>
+<p>Also, you need to setup the root password</p>
+<p><img src="vb-centos7-04.png" alt=""></p>
+<p>Finished the installation, login into the VM as root user and edit the first one NIC</p>
+<p><img src="vb-centos7-05.png" alt=""></p>
+<p>You need to pay attention on this variables:</p>
+<pre><code class="language-toml">BOOTPROTO=static
+ONBOOT=yes
+IPADDR=10.0.2.2
+PREFIX=24
+GATEWAY=10.0.2.1
+DNS1=10.0.2.1
+</code></pre>
+<p><img src="vb-centos7-06.png" alt=""></p>
+<p>Edit the second NIC</p>
+<p><img src="vb-centos7-07.png" alt=""></p>
+<p>Pay attention on this variables</p>
+<pre><code class="language-toml">BOOTPROTO=static
+DEFROUTE=no
+ONBOOT=yes
+IPADDR=192.168.56.2
+PREFIX=24
+</code></pre>
+<p><img src="vb-centos7-08.png" alt=""></p>
+<p>Restart the system network service and check the network connectivity</p>
+<pre><code class="language-shell">systemctl restart network 
+ip addr | grep &quot;inet &quot;
+ip route
+</code></pre>
+<p><img src="vb-centos7-09.png" alt=""></p>
+<h4 id="testing">Testing</h4>
+<p>SSH access to VM from the <code>Host-only Adapter</code></p>
+<pre><code class="language-console">$ ssh root@192.168.56.2
+root@192.168.56.2's password: 
+Last login: Tue Oct 15 23:10:05 2019 from 192.168.56.1
+[root@localhost ~]# ping www.terra.com
+PING www.terra.com (208.70.188.57) 56(84) bytes of data.
+64 bytes from www.terra.com (208.70.188.57): icmp_seq=1 ttl=53 time=151 ms
+64 bytes from www.terra.com (208.70.188.57): icmp_seq=2 ttl=53 time=151 ms
+^C
+--- www.terra.com ping statistics ---
+3 packets transmitted, 2 received, 33% packet loss, time 2002ms
+[root@localhost ~]# 
+</code></pre>
+<h4 id="final-step">Final Step</h4>
+<p>Once you have configured the operating system, you can shutdown and eject the DVD.</p>
+<pre><code class="language-console">$ ssh root@192.168.56.2
+root@192.168.56.2's password:
+Last login: Tue Oct 15 23:10:05 2019 from 192.168.56.1
+[root@localhost ~]# halt -p
+</code></pre>
+<pre><code class="language-shell">VBoxManage storageattach $VM --storagectl &quot;IDE Controller&quot; --port 0 \
+  --device 0 --type dvddrive --medium none
+</code></pre>
+<hr>
+<h3 id="others-usefull-commands-">Others usefull commands #</h3>
+<p>Start in headless mode</p>
+<pre><code class="language-shell">VBoxManage startvm $VM --type headless
+</code></pre>
+<p>Remove nat network</p>
+<pre><code class="language-shell">VBoxManage natnetwork remove --netname natnet
+</code></pre>
+<p>Disable the dhcp</p>
+<pre><code class="language-shell">VBoxManage natnetwork modify --netname natnet --dhcp off
+</code></pre>
+<p>Start the nat network</p>
+<pre><code class="language-shell">VBoxManage natnetwork start --netname natnet
+</code></pre>
+<p>Take snapshots</p>
+<pre><code class="language-shell">VBoxManage snapshot $VM take &lt;name of snapshot&gt;
+</code></pre>
+<p>Revert snapshot</p>
+<pre><code class="language-shell">VBoxManage snapshot $VM restore &lt;name of snapshot&gt;
+</code></pre>
+<p>Delete VM</p>
+<pre><code class="language-shell">VBoxManage unregistervm $VM --delete
+</code></pre>
+<hr>
+<h3 id="sources-">Sources #</h3>
+<p><a href="https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html">https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html</a></p>
+<p><a href="https://www.virtualbox.org/manual/ch08.html">https://www.virtualbox.org/manual/ch08.html</a></p>
+<p><a href="https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html">https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html</a></p>
+<p><a href="https://www.nakivo.com/blog/virtualbox-network-setting-guide/">https://www.nakivo.com/blog/virtualbox-network-setting-guide/</a></p>
+<p><a href="https://www.virtualbox.org/manual/ch06.html">https://www.virtualbox.org/manual/ch06.html</a></p>
+<p><a href="https://www.linuxtechi.com/manage-virtualbox-virtual-machines-command-line/">https://www.linuxtechi.com/manage-virtualbox-virtual-machines-command-line/</a></p>
+
+                    </div>
+                    <br/>
+                    <br/> 
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/virtualbox">virtualbox</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/lab">lab</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://jenciso.github.io/blog/12-factor-app/"> &laquo; 12-Factor App</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://jenciso.github.io/blog/howto-limit-the-allow-character-in-the-jenkins-item-creation/">How to limit the allowed characters in Jenkins items &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">              
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jenciso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/active-directory">active-directory</a>
+			
+			<a class="mt-1 mb-1" href="/tags/asciinema">asciinema</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bash">bash</a>
+			
+			<a class="mt-1 mb-1" href="/tags/centos">centos</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cloud-native">cloud-native</a>
+			
+			<a class="mt-1 mb-1" href="/tags/dnsmasq">dnsmasq</a>
+			
+			<a class="mt-1 mb-1" href="/tags/emoji">emoji</a>
+			
+			<a class="mt-1 mb-1" href="/tags/gluster">gluster</a>
+			
+			<a class="mt-1 mb-1" href="/tags/gradle">gradle</a>
+			
+			<a class="mt-1 mb-1" href="/tags/grafana">grafana</a>
+			
+			<a class="mt-1 mb-1" href="/tags/haproxy">haproxy</a>
+			
+			<a class="mt-1 mb-1" href="/tags/heketi">heketi</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hugo">hugo</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jdk">jdk</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jenkins">jenkins</a>
+			
+			<a class="mt-1 mb-1" href="/tags/kubernetes">kubernetes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/lab">lab</a>
+			
+			<a class="mt-1 mb-1" href="/tags/loadbalancer">loadbalancer</a>
+			
+			<a class="mt-1 mb-1" href="/tags/monitoring">monitoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/networkmanager">networkmanager</a>
+			
+			<a class="mt-1 mb-1" href="/tags/openconnect">openconnect</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ruby">ruby</a>
+			
+			<a class="mt-1 mb-1" href="/tags/spring-boot">spring-boot</a>
+			
+			<a class="mt-1 mb-1" href="/tags/storage">storage</a>
+			
+			<a class="mt-1 mb-1" href="/tags/terraform">terraform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ubuntu">ubuntu</a>
+			
+			<a class="mt-1 mb-1" href="/tags/virtualbox">virtualbox</a>
+			
+			<a class="mt-1 mb-1" href="/tags/vpn">vpn</a>
+			
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                &copy; Copyright Juan Enciso - All rights reserved
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-106539950-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    <script src="https://jenciso.github.io/js/clipboard.js"></script>
+
+
+    </body>
+</html>

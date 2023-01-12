@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Tech-Blog</title>
+    <link>https://jenciso.github.io/tags/java/</link>
+    <description>Recent content in java on Tech-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Juan Enciso - All rights reserved</copyright>
+    <lastBuildDate>Fri, 21 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jenciso.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to use multiple Java Development Kit</title>
+      <link>https://jenciso.github.io/blog/how-to-use-multiple-jdks/</link>
+      <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenciso.github.io/blog/how-to-use-multiple-jdks/</guid>
+      <description>Intro Getting Started References    Intro SDKMAN! is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems.</description>
+    </item>
+    
+    <item>
+      <title>Create a simple spring boot application using gradle</title>
+      <link>https://jenciso.github.io/blog/create-a-simple-spring-boot-application-with-gradle/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenciso.github.io/blog/create-a-simple-spring-boot-application-with-gradle/</guid>
+      <description>Overview To create a simple spring boot application, as the very famous example &amp;ldquo;Hello World!&amp;rdquo;, you don&amp;rsquo;t need to use an IDE software. Fortunately, you can use only gradle CLI, and the Gradle website explains how to do this via its simple tutorial.</description>
+    </item>
+    
+  </channel>
+</rss>
