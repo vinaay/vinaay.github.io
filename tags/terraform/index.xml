@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>terraform on Tech-Blog</title>
-    <link>https://jenciso.github.io/tags/terraform/</link>
+    <link>https://vinaay.github.io/tags/terraform/</link>
     <description>Recent content in terraform on Tech-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Juan Enciso - All rights reserved</copyright>
-    <lastBuildDate>Sun, 19 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jenciso.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://vinaay.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy NGINX container using Terraform</title>
-      <link>https://jenciso.github.io/blog/deploy-nginx-container-nginx/</link>
+      <link>https://vinaay.github.io/blog/deploy-nginx-container-nginx/</link>
       <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/deploy-nginx-container-nginx/</guid>
+      <guid>https://vinaay.github.io/blog/deploy-nginx-container-nginx/</guid>
       <description>Intro Terraform is a excellent tool to provide infrastructure as code in your organization. Commonly, it is use to work in cloud infrastructure environments, however it can also be used with others providers (not only cloud providers), one example is use docker service as a provider.</description>
     </item>
     

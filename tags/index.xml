@@ -2,270 +2,270 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tech-Blog</title>
-    <link>https://jenciso.github.io/tags/</link>
+    <link>https://vinaay.github.io/tags/</link>
     <description>Recent content in Tags on Tech-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Juan Enciso - All rights reserved</copyright>
-    <lastBuildDate>Mon, 28 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jenciso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://vinaay.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>bash</title>
-      <link>https://jenciso.github.io/tags/bash/</link>
+      <link>https://vinaay.github.io/tags/bash/</link>
       <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/bash/</guid>
+      <guid>https://vinaay.github.io/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
-      <link>https://jenciso.github.io/tags/java/</link>
+      <link>https://vinaay.github.io/tags/java/</link>
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/java/</guid>
+      <guid>https://vinaay.github.io/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jdk</title>
-      <link>https://jenciso.github.io/tags/jdk/</link>
+      <link>https://vinaay.github.io/tags/jdk/</link>
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/jdk/</guid>
+      <guid>https://vinaay.github.io/tags/jdk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ruby</title>
-      <link>https://jenciso.github.io/tags/ruby/</link>
+      <link>https://vinaay.github.io/tags/ruby/</link>
       <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/ruby/</guid>
+      <guid>https://vinaay.github.io/tags/ruby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gradle</title>
-      <link>https://jenciso.github.io/tags/gradle/</link>
+      <link>https://vinaay.github.io/tags/gradle/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/gradle/</guid>
+      <guid>https://vinaay.github.io/tags/gradle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spring-boot</title>
-      <link>https://jenciso.github.io/tags/spring-boot/</link>
+      <link>https://vinaay.github.io/tags/spring-boot/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/spring-boot/</guid>
+      <guid>https://vinaay.github.io/tags/spring-boot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dnsmasq</title>
-      <link>https://jenciso.github.io/tags/dnsmasq/</link>
+      <link>https://vinaay.github.io/tags/dnsmasq/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/dnsmasq/</guid>
+      <guid>https://vinaay.github.io/tags/dnsmasq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>networkmanager</title>
-      <link>https://jenciso.github.io/tags/networkmanager/</link>
+      <link>https://vinaay.github.io/tags/networkmanager/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/networkmanager/</guid>
+      <guid>https://vinaay.github.io/tags/networkmanager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>https://jenciso.github.io/tags/ubuntu/</link>
+      <link>https://vinaay.github.io/tags/ubuntu/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/ubuntu/</guid>
+      <guid>https://vinaay.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>terraform</title>
-      <link>https://jenciso.github.io/tags/terraform/</link>
+      <link>https://vinaay.github.io/tags/terraform/</link>
       <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/terraform/</guid>
+      <guid>https://vinaay.github.io/tags/terraform/</guid>
       <description></description>
     </item>
     
     <item>
       <title>active-directory</title>
-      <link>https://jenciso.github.io/tags/active-directory/</link>
+      <link>https://vinaay.github.io/tags/active-directory/</link>
       <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/active-directory/</guid>
+      <guid>https://vinaay.github.io/tags/active-directory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>centos</title>
-      <link>https://jenciso.github.io/tags/centos/</link>
+      <link>https://vinaay.github.io/tags/centos/</link>
       <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/centos/</guid>
+      <guid>https://vinaay.github.io/tags/centos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cloud-native</title>
-      <link>https://jenciso.github.io/tags/cloud-native/</link>
+      <link>https://vinaay.github.io/tags/cloud-native/</link>
       <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/cloud-native/</guid>
+      <guid>https://vinaay.github.io/tags/cloud-native/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lab</title>
-      <link>https://jenciso.github.io/tags/lab/</link>
+      <link>https://vinaay.github.io/tags/lab/</link>
       <pubDate>Mon, 14 Oct 2019 23:45:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/lab/</guid>
+      <guid>https://vinaay.github.io/tags/lab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virtualbox</title>
-      <link>https://jenciso.github.io/tags/virtualbox/</link>
+      <link>https://vinaay.github.io/tags/virtualbox/</link>
       <pubDate>Mon, 14 Oct 2019 23:45:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/virtualbox/</guid>
+      <guid>https://vinaay.github.io/tags/virtualbox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jenkins</title>
-      <link>https://jenciso.github.io/tags/jenkins/</link>
+      <link>https://vinaay.github.io/tags/jenkins/</link>
       <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/jenkins/</guid>
+      <guid>https://vinaay.github.io/tags/jenkins/</guid>
       <description></description>
     </item>
     
     <item>
       <title>emoji</title>
-      <link>https://jenciso.github.io/tags/emoji/</link>
+      <link>https://vinaay.github.io/tags/emoji/</link>
       <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/emoji/</guid>
+      <guid>https://vinaay.github.io/tags/emoji/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gluster</title>
-      <link>https://jenciso.github.io/tags/gluster/</link>
+      <link>https://vinaay.github.io/tags/gluster/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/gluster/</guid>
+      <guid>https://vinaay.github.io/tags/gluster/</guid>
       <description></description>
     </item>
     
     <item>
       <title>heketi</title>
-      <link>https://jenciso.github.io/tags/heketi/</link>
+      <link>https://vinaay.github.io/tags/heketi/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/heketi/</guid>
+      <guid>https://vinaay.github.io/tags/heketi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>storage</title>
-      <link>https://jenciso.github.io/tags/storage/</link>
+      <link>https://vinaay.github.io/tags/storage/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/storage/</guid>
+      <guid>https://vinaay.github.io/tags/storage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>asciinema</title>
-      <link>https://jenciso.github.io/tags/asciinema/</link>
+      <link>https://vinaay.github.io/tags/asciinema/</link>
       <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/asciinema/</guid>
+      <guid>https://vinaay.github.io/tags/asciinema/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://jenciso.github.io/tags/hugo/</link>
+      <link>https://vinaay.github.io/tags/hugo/</link>
       <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/hugo/</guid>
+      <guid>https://vinaay.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>haproxy</title>
-      <link>https://jenciso.github.io/tags/haproxy/</link>
+      <link>https://vinaay.github.io/tags/haproxy/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/haproxy/</guid>
+      <guid>https://vinaay.github.io/tags/haproxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>loadbalancer</title>
-      <link>https://jenciso.github.io/tags/loadbalancer/</link>
+      <link>https://vinaay.github.io/tags/loadbalancer/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/loadbalancer/</guid>
+      <guid>https://vinaay.github.io/tags/loadbalancer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>grafana</title>
-      <link>https://jenciso.github.io/tags/grafana/</link>
+      <link>https://vinaay.github.io/tags/grafana/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/grafana/</guid>
+      <guid>https://vinaay.github.io/tags/grafana/</guid>
       <description></description>
     </item>
     
     <item>
       <title>monitoring</title>
-      <link>https://jenciso.github.io/tags/monitoring/</link>
+      <link>https://vinaay.github.io/tags/monitoring/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/monitoring/</guid>
+      <guid>https://vinaay.github.io/tags/monitoring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openconnect</title>
-      <link>https://jenciso.github.io/tags/openconnect/</link>
+      <link>https://vinaay.github.io/tags/openconnect/</link>
       <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/openconnect/</guid>
+      <guid>https://vinaay.github.io/tags/openconnect/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vpn</title>
-      <link>https://jenciso.github.io/tags/vpn/</link>
+      <link>https://vinaay.github.io/tags/vpn/</link>
       <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/vpn/</guid>
+      <guid>https://vinaay.github.io/tags/vpn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kubernetes</title>
-      <link>https://jenciso.github.io/tags/kubernetes/</link>
+      <link>https://vinaay.github.io/tags/kubernetes/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/tags/kubernetes/</guid>
+      <guid>https://vinaay.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
