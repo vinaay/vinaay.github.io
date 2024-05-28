@@ -2,174 +2,174 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech-Blog</title>
-    <link>https://jenciso.github.io/</link>
+    <link>https://vinay.github.io/</link>
     <description>Recent content on Tech-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Vinay - All rights reserved</copyright>
-    <lastBuildDate>Mon, 28 Fb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jenciso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Fb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://vinay.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to check if a variable is set in Bash?</title>
-      <link>https://jenciso.github.io/blog/how-to-check-if-a-variable-is-set-in-bash/</link>
+      <link>https://vinay.github.io/blog/how-to-check-if-a-variable-is-set-in-bash/</link>
       <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-to-check-if-a-variable-is-set-in-bash/</guid>
+      <guid>https://vinay.github.io/blog/how-to-check-if-a-variable-is-set-in-bash/</guid>
       <description>Question Answers  Short Approach Full explanation      Question For example, how do I check if the user gave the first parameter to a function?</description>
     </item>
     
     <item>
       <title>How to use multiple Java Development Kit</title>
-      <link>https://jenciso.github.io/blog/how-to-use-multiple-jdks/</link>
+      <link>https://vinay.github.io/blog/how-to-use-multiple-jdks/</link>
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-to-use-multiple-jdks/</guid>
+      <guid>https://vinay.github.io/blog/how-to-use-multiple-jdks/</guid>
       <description>Intro Getting Started References    Intro SDKMAN! is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems.</description>
     </item>
     
     <item>
       <title>Saying Hello World with Ruby On Rails</title>
-      <link>https://jenciso.github.io/blog/saying-hello-world-with-ruby-on-rails/</link>
+      <link>https://vinay.github.io/blog/saying-hello-world-with-ruby-on-rails/</link>
       <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/saying-hello-world-with-ruby-on-rails/</guid>
+      <guid>https://vinay.github.io/blog/saying-hello-world-with-ruby-on-rails/</guid>
       <description>Intro Getting Started with Ruby  Installing Ruby Installing Rails   Say Hello World!  Using one command line Using Puts function Using object oriented version Using Sinatra and puma Use a container application   Demo    Intro As an SRE engineer, you have to approximate the Developer Teams talking in the same language.</description>
     </item>
     
     <item>
       <title>Create a simple spring boot application using gradle</title>
-      <link>https://jenciso.github.io/blog/create-a-simple-spring-boot-application-with-gradle/</link>
+      <link>https://vinay.github.io/blog/create-a-simple-spring-boot-application-with-gradle/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/create-a-simple-spring-boot-application-with-gradle/</guid>
+      <guid>https://vinay.github.io/blog/create-a-simple-spring-boot-application-with-gradle/</guid>
       <description>Overview To create a simple spring boot application, as the very famous example &amp;ldquo;Hello World!&amp;rdquo;, you don&amp;rsquo;t need to use an IDE software. Fortunately, you can use only gradle CLI, and the Gradle website explains how to do this via its simple tutorial.</description>
     </item>
     
     <item>
       <title>Using dnsmasq with networkManager in Ubuntu 20.04</title>
-      <link>https://jenciso.github.io/blog/caching-dns-using-dnsmasq/</link>
+      <link>https://vinay.github.io/blog/caching-dns-using-dnsmasq/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/caching-dns-using-dnsmasq/</guid>
+      <guid>https://vinay.github.io/blog/caching-dns-using-dnsmasq/</guid>
       <description>Overview Remote work has been increased since covid-19. VPN appliances turned crucial devices and employees has been using more than ever their companies internal services. VPN often need to setup your DNS configuration in order to use the internal DNS server of the company, so you can resolve hostnames or services offer by your company.</description>
     </item>
     
     <item>
       <title>Deploy NGINX container using Terraform</title>
-      <link>https://jenciso.github.io/blog/deploy-nginx-container-nginx/</link>
+      <link>https://vinay.github.io/blog/deploy-nginx-container-nginx/</link>
       <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/deploy-nginx-container-nginx/</guid>
+      <guid>https://vinay.github.io/blog/deploy-nginx-container-nginx/</guid>
       <description>Intro Terraform is a excellent tool to provide infrastructure as code in your organization. Commonly, it is use to work in cloud infrastructure environments, however it can also be used with others providers (not only cloud providers), one example is use docker service as a provider.</description>
     </item>
     
     <item>
       <title>How To Join CentOS Linux To An Active Directory Domain</title>
-      <link>https://jenciso.github.io/blog/how-to-join-centos-linux-to-an-active-directory-domain/</link>
+      <link>https://vinay.github.io/blog/how-to-join-centos-linux-to-an-active-directory-domain/</link>
       <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-to-join-centos-linux-to-an-active-directory-domain/</guid>
+      <guid>https://vinay.github.io/blog/how-to-join-centos-linux-to-an-active-directory-domain/</guid>
       <description>Intro These steps were tested using Active Directory on Windows 2008 R2 and Windows 2012 R2.
 Pre-requisites  Install the packages needed  yum -y install sssd realmd oddjob oddjob-mkhomedir adcli \ samba-common samba-common-tools krb5-workstation \ openldap-clients policycoreutils-python   Ensure to use your AD as domain server  [root@centos7 ~]# cat /etc/resolv.</description>
     </item>
     
     <item>
       <title>12-Factor App</title>
-      <link>https://jenciso.github.io/blog/12-factor-app/</link>
+      <link>https://vinay.github.io/blog/12-factor-app/</link>
       <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/12-factor-app/</guid>
+      <guid>https://vinay.github.io/blog/12-factor-app/</guid>
       <description>Twelve factor App are great patterns to create cloud native applications. The guide was inspired by Martin Fowler’s books Patterns of Enterprise Application Architecture and Refactoring.</description>
     </item>
     
     <item>
       <title>Create a lab environment with VirtualBox</title>
-      <link>https://jenciso.github.io/blog/create-a-lab-environment-with-virtualbox/</link>
+      <link>https://vinay.github.io/blog/create-a-lab-environment-with-virtualbox/</link>
       <pubDate>Mon, 14 Oct 2019 23:45:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/create-a-lab-environment-with-virtualbox/</guid>
+      <guid>https://vinay.github.io/blog/create-a-lab-environment-with-virtualbox/</guid>
       <description>VirtualBox is a great tool often used to simulate an entire lab. It could create all need to accomplish this goal for you.
 VirtualBox can create multiples Networks and different virtual machines (VMs).</description>
     </item>
     
     <item>
       <title>How to limit the allowed characters in Jenkins items</title>
-      <link>https://jenciso.github.io/blog/howto-limit-the-allow-character-in-the-jenkins-item-creation/</link>
+      <link>https://vinay.github.io/blog/howto-limit-the-allow-character-in-the-jenkins-item-creation/</link>
       <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/howto-limit-the-allow-character-in-the-jenkins-item-creation/</guid>
+      <guid>https://vinay.github.io/blog/howto-limit-the-allow-character-in-the-jenkins-item-creation/</guid>
       <description>Normally, Jenkins doesn&amp;rsquo;t limit the allowed characters when you try to create a item, like folder, project name, etc.
 Sometimes, one special character could break the dashboard and your text search box won&amp;rsquo;t works.</description>
     </item>
     
     <item>
       <title>Imprint</title>
-      <link>https://jenciso.github.io/static/imprint/</link>
+      <link>https://vinay.github.io/static/imprint/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/static/imprint/</guid>
+      <guid>https://vinay.github.io/static/imprint/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How setup the Noto Color Emoji in your Ubuntu</title>
-      <link>https://jenciso.github.io/blog/how-setup-your-noto-color-emoji-fonts/</link>
+      <link>https://vinay.github.io/blog/how-setup-your-noto-color-emoji-fonts/</link>
       <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-setup-your-noto-color-emoji-fonts/</guid>
+      <guid>https://vinay.github.io/blog/how-setup-your-noto-color-emoji-fonts/</guid>
       <description>Ubuntu 18.04 LTS ships with all-new color emoji for use in messaging apps, text editors, and also on the web. Emoji is nothing new for Ubuntu.</description>
     </item>
     
     <item>
       <title>How to cleanup a Gluster Heketi volume</title>
-      <link>https://jenciso.github.io/blog/how-to-clean-a-gluster-heketi-volume/</link>
+      <link>https://vinay.github.io/blog/how-to-clean-a-gluster-heketi-volume/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-to-clean-a-gluster-heketi-volume/</guid>
+      <guid>https://vinay.github.io/blog/how-to-clean-a-gluster-heketi-volume/</guid>
       <description>I&amp;rsquo;m using gluster + heketi in my current kubernetes cluster, with it I give a persistent storage service on demand, it is easy to use, robust and simple.</description>
     </item>
     
     <item>
       <title>Embedding asciinema cast in your Hugo site</title>
-      <link>https://jenciso.github.io/blog/embedding-asciinema-cast-in-your-hugo-site/</link>
+      <link>https://vinay.github.io/blog/embedding-asciinema-cast-in-your-hugo-site/</link>
       <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/embedding-asciinema-cast-in-your-hugo-site/</guid>
+      <guid>https://vinay.github.io/blog/embedding-asciinema-cast-in-your-hugo-site/</guid>
       <description>Every now and then I want to show step by step a process simply recording an output of my terminal, so commonly I use asciinema to do that.</description>
     </item>
     
     <item>
       <title>How setup Haproxy with zero downtime reload from code source</title>
-      <link>https://jenciso.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/</link>
+      <link>https://vinay.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/</guid>
+      <guid>https://vinay.github.io/blog/how-setup-haproxy-with-zero-downtime-reload-from-code-source/</guid>
       <description>if you are looking for a modern load balancer with zero downtime when you need to reload its configuration, HAProxy 1.8 and Linux kernel &amp;gt;=3.9 could take advantage of a new reload mechanism which can transfer sockets from the old process to the new process without dropping any connections.</description>
     </item>
     
     <item>
       <title>Recover your grafana admin password using sqlite shell</title>
-      <link>https://jenciso.github.io/blog/how-to-recovery-the-admin-password-in-grafana/</link>
+      <link>https://vinay.github.io/blog/how-to-recovery-the-admin-password-in-grafana/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-to-recovery-the-admin-password-in-grafana/</guid>
+      <guid>https://vinay.github.io/blog/how-to-recovery-the-admin-password-in-grafana/</guid>
       <description>One day you can lose your grafana admin password and probably you will desire to recover it rather than reinstall. If your grafana has been using sqlite as backend storage, the recover process is easy.</description>
     </item>
     
     <item>
       <title>Custom openconnect vpn setup for use in Palo Alto appliances</title>
-      <link>https://jenciso.github.io/blog/how-to-compile-a-global-protect-openconnect-version/</link>
+      <link>https://vinay.github.io/blog/how-to-compile-a-global-protect-openconnect-version/</link>
       <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/blog/how-to-compile-a-global-protect-openconnect-version/</guid>
+      <guid>https://vinay.github.io/blog/how-to-compile-a-global-protect-openconnect-version/</guid>
       <description>Intro My company use the Palo Alto Networks appliance in order to offer a VPN service for us. Normally, I use openconnect or openvpn client when I needed to setup some VPN connection, but these clients don&amp;rsquo;t work with Palo Alto devices.</description>
     </item>
     
     <item>
       <title>Manage TLS Certificates for Kubernetes users</title>
-      <link>https://jenciso.github.io/personal/manage-tls-certificates-for-kubernetes-users/</link>
+      <link>https://vinay.github.io/personal/manage-tls-certificates-for-kubernetes-users/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jenciso.github.io/personal/manage-tls-certificates-for-kubernetes-users/</guid>
+      <guid>https://vinay.github.io/personal/manage-tls-certificates-for-kubernetes-users/</guid>
       <description>Intro After to create your kubernetes cluster, the most common next step is create user&amp;rsquo;s access to the cluster. In order to do that, you&amp;rsquo;ll need to create certificates to give authentication via kube-apiserver service.</description>
     </item>
     
